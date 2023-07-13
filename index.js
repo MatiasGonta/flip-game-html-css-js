@@ -41,9 +41,9 @@ cards.forEach(card => {
         }
 
         if (parCards.length === 36) {
-            confettiContainer.classList.add('active');
+            confettiContainer.style.display = 'flex';
             setTimeout(() => {
-                confettiContainer.classList.remove('active');
+                confettiContainer.style.display = 'none';
             }, 3500);
         }
     });

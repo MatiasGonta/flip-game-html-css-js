@@ -14,14 +14,34 @@
 body {
     background: linear-gradient(297deg, rgba(54,57,90,1) 15%, rgba(76,81,126,1) 51%, rgba(59,65,129,1) 90%);
 }
-  
-main {
+
+/*Header styles*/
+header {
     display: flex;
     justify-content: center;
     align-items: center;
 
     width: 100vw;
-    height: 100vh;
+    height: 15vh;
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 2vh;
+    border-radius: 10px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+}  
+
+/*Main styles*/
+main {
+    display: flex;
+    justify-content: center;
+
+    width: 100vw;
+    height: 85vh;
 }
   
 article {
@@ -35,7 +55,7 @@ article {
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
 }
   
 #score {
