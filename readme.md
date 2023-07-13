@@ -2,7 +2,7 @@
 
 Tech Flip is a memory card flip match game based on the programming language theme. It provides a simple interface where users can test their memory skills by flipping cards and matching pairs. The project is built using HTML, CSS, and JavaScript.
 
-![tech-flip-screenshot!](./tech-flip-screenshot.png)
+![tech-flip-screenshot](./assets/tech-flip-screenshot.png)
 
 ## Features
 
