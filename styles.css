@@ -148,6 +148,20 @@ section {
     background-color: #d6d6d6;
     transform: rotateY(180deg);
 }
+
+.card__front__icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.card__back__icon {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin-left: 1px;
+    margin-bottom: 1px;
+}
   
 .card--flipped .card__front {
     transform: rotateY(180deg);
