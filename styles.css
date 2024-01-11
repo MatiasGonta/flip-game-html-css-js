@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600');
+@font-face {
+    font-family: Inconsolata;
+    src: url(./fonts/Inconsolata-Regular.ttf);
+}
+
+:root {
+    --flip-main-color: #36395A;
+    --flip-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+}
 
 * {
     margin: 0;
@@ -8,110 +16,109 @@
     text-align: center;
     list-style: none;
     user-select: none;
-    color: #36395A;
+    color: var(--flip-main-color);
 }
   
 body {
     background: linear-gradient(297deg, rgba(54,57,90,1) 15%, rgba(76,81,126,1) 51%, rgba(59,65,129,1) 90%);
 }
 
-/*Header styles*/
-header {
+/* Header */
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100vw;
     height: 15vh;
 }
 
-h1 {
+.header__title {
     font-size: 40px;
     letter-spacing: 2px;
     background-color: #fff;
     padding: 10px;
     margin-bottom: 2vh;
     border-radius: 10px;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-shadow: var(--flip-shadow);
 }  
 
-/*Main styles*/
+/* Main */
 main {
     display: flex;
     justify-content: center;
-
     width: 100vw;
     height: 85vh;
 }
   
-article {
+section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
     width: 500px;
     height: 550px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-shadow: var(--flip-shadow);
 }
-  
-#score {
+
+/* Score */
+.score {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
     height: 15%;
 }
 
-#score p, #score button {
+.score__count,
+.score__refresh-btn {
     font-size: 25px;
     font-weight: bold;
 }
 
-#score button {
+.score__refresh-btn {
     width: 150px;
     height: 48px;
     background-color: #FCFCFD;
     border: none;
     border-radius: 4px;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-shadow: var(--flip-shadow);
     transition: box-shadow 0.15s, transform 0.15s;
     cursor: pointer;
 }
 
-#score button:focus {
+.score__refresh-btn:focus {
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-#score button:hover {
+.score__refresh-btn:hover {
   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
-#score button:active {
+.score__refresh-btn:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
-  
-#table {
+
+/* Table */
+.table {
     width: 100%;
     height: 82.5%;
 }
   
-ul {
+.table__cards {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 10px;
-
     width: 100%;
     height: 100%;
 }
 
+/* Cards */
 .card {
     width: 100%;
     height: 100%;
@@ -119,11 +126,11 @@ ul {
     cursor: pointer;
 }
   
-.card-front, .card-back {
+.card__front,
+.card__back {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 100%;
     position: absolute;
@@ -133,20 +140,20 @@ ul {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
   
-.card-front {
+.card__front {
     background-color: #f3f3f3;
 }
   
-.card-back {
+.card__back {
     background-color: #d6d6d6;
     transform: rotateY(180deg);
 }
   
-.card.flipped .card-front {
+.card.card--flipped .card__front {
     transform: rotateY(180deg);
 }
   
-.card.flipped .card-back {
+.card.card--flipped .card__back {
     transform: rotateY(0deg);
 }
   
@@ -154,19 +161,29 @@ ul {
     cursor: default;
 }
 
-.card.error {
-    animation: shaking 0.5s;
+.card.card--error {
+    animation: error-shaking 0.5s;
 }
 
-@keyframes shaking {
-    0% { transform: translateX(0) }
-    25% { transform: translateX(5px) }
-    50% { transform: translateX(-5px) }
-    75% { transform: translateX(5px) }
-    100% { transform: translateX(0) }
+@keyframes error-shaking {
+    0% {
+        transform: translateX(0)
+    }
+    25% {
+        transform: translateX(5px)
+    }
+    50% {
+        transform: translateX(-5px)
+    }
+    75% {
+        transform: translateX(5px)
+    }
+    100% {
+        transform: translateX(0)
+    }
 }
 
-/*Win Effect*/
+/* Win Effect */
 .confetti {
     display: none;
     justify-content: center;
@@ -182,7 +199,7 @@ ul {
     display: flex;
 }
 
-.confetti-piece {
+.confetti__piece {
     position: absolute;
     width: 10px;
     height: 30px;
@@ -191,137 +208,143 @@ ul {
     opacity: 0;
 }
 
-.confetti-piece:nth-child(1) {
+.confetti__piece:nth-child(1) {
     left: 7%;
     transform: rotate(-40deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 182ms;
     animation-duration: 1116ms;
 }
 
-.confetti-piece:nth-child(2) {
+.confetti__piece:nth-child(2) {
     left: 14%;
     transform: rotate(4deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 161ms;
     animation-duration: 1076ms;
 }
 
-.confetti-piece:nth-child(3) {
+.confetti__piece:nth-child(3) {
     left: 21%;
     transform: rotate(-51deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 481ms;
     animation-duration: 1103ms;
 }
 
-.confetti-piece:nth-child(4) {
+.confetti__piece:nth-child(4) {
     left: 28%;
     transform: rotate(61deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 334ms;
     animation-duration: 708ms;
 }
 
-.confetti-piece:nth-child(5) {
+.confetti__piece:nth-child(5) {
     left: 35%;
     transform: rotate(-52deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 302ms;
     animation-duration: 776ms;
 }
 
-.confetti-piece:nth-child(6) {
+.confetti__piece:nth-child(6) {
     left: 42%;
     transform: rotate(38deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 180ms;
     animation-duration: 1168ms;
 }
 
-.confetti-piece:nth-child(7) {
+.confetti__piece:nth-child(7) {
     left: 49%;
     transform: rotate(11deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 395ms;
     animation-duration: 1200ms;
 }
 
-.confetti-piece:nth-child(8) {
+.confetti__piece:nth-child(8) {
     left: 56%;
     transform: rotate(49deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 14ms;
     animation-duration: 887ms;
 }
 
-.confetti-piece:nth-child(9) {
+.confetti__piece:nth-child(9) {
     left: 63%;
     transform: rotate(-72deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 149ms;
     animation-duration: 805ms;
 }
 
-.confetti-piece:nth-child(10) {
+.confetti__piece:nth-child(10) {
     left: 70%;
     transform: rotate(10deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 351ms;
     animation-duration: 1059ms;
 }
 
-.confetti-piece:nth-child(11) {
+.confetti__piece:nth-child(11) {
     left: 77%;
     transform: rotate(4deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 307ms;
     animation-duration: 1132ms;
 }
 
-.confetti-piece:nth-child(12) {
+.confetti__piece:nth-child(12) {
     left: 84%;
     transform: rotate(42deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 464ms;
     animation-duration: 776ms;
 }
 
-.confetti-piece:nth-child(13) {
+.confetti__piece:nth-child(13) {
     left: 91%;
     transform: rotate(-72deg);
-    animation: makeItRain 1000ms infinite ease-out;
+    animation: rain 1000ms infinite ease-out;
     animation-delay: 429ms;
     animation-duration: 818ms;
 }
 
-.confetti-piece:nth-child(odd) {
+.confetti__piece:nth-child(odd) {
     background: #7431e8;
 }
 
-.confetti-piece:nth-child(even) {
+.confetti__piece:nth-child(even) {
     z-index: 1;
 }
 
-.confetti-piece:nth-child(4n) {
+.confetti__piece:nth-child(4n) {
     width: 5px;
     height: 12px;
     animation-duration: 2000ms;
 }
 
-.confetti-piece:nth-child(3n) {
+.confetti__piece:nth-child(3n) {
     width: 3px;
     height: 10px;
     animation-duration: 2500ms;
     animation-delay: 1000ms;
 }
 
-.confetti-piece:nth-child(4n-7) {
+.confetti__piece:nth-child(4n-7) {
   background: red;
 }
 
-@keyframes makeItRain {
-    from {opacity: 0;}
-    50% {opacity: 1;}
-    to {-webkit-transform: translateY(350px);}
+@keyframes rain {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: translateY(350px);
+    }
 }

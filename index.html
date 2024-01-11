@@ -1,337 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:;base64,=">
-    <link rel="icon" href="assets/tech-flip.ico"></link>
+    <link rel="icon" href="assets/tech-flip.ico">
+    </link>
     <title>Tech Flip</title>
 </head>
+
 <body>
-    <div id="root">
-        <div class="confetti">
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-            <div class="confetti-piece"></div>
-        </div>
-        <header>
-            <h1>Tech Flip</h1>
-        </header>
-        <main>
-            <article>
-                <section id="score">
-                    <p>Flip Count: <span id="count"></span></p>
-                    <button>Refresh</button>
-                </section>
-                <section id="table">
-                    <ul>
-                        <li class="card" data-identifier="python">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-python"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="python">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-python"></i>
-                            </div>
-                        </li> 
-                        <li class="card" data-identifier="react">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-react"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="react">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-react"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="sass">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-sass"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="sass">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-sass"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="javascript">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-square-js"></i>
-                            </div>
-                        </li> 
-                        <li class="card" data-identifier="javascript">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-square-js"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="css">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-css3-alt"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="css">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-css3-alt"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="html">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-html5"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="html">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-html5"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="angular">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-angular"></i>
-                            </div>
-                        </li> 
-                        <li class="card" data-identifier="angular">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-angular"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="vue">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-vuejs"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="vue">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-vuejs"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="php">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-php"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="php">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-php"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="node-js">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-node-js"></i>
-                            </div>
-                        </li> 
-                        <li class="card" data-identifier="node-js">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-node-js"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="less">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-less"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="less">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-less"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="docker">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-docker"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="docker">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-docker"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="bootstrap">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-bootstrap"></i>
-                            </div>
-                        </li> 
-                        <li class="card" data-identifier="bootstrap">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-bootstrap"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="git">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-git-alt"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="git">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-git-alt"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="linux">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-linux"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="linux">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-linux"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="gitlab">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-gitlab"></i>
-                            </div>
-                        </li> 
-                        <li class="card" data-identifier="gitlab">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-gitlab"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="laravel">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-laravel"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="laravel">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-laravel"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="go">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-golang"></i>
-                            </div>
-                        </li>
-                        <li class="card" data-identifier="go">
-                            <div class="card-front">
-                                <i class="fas fa-question"></i>
-                            </div>
-                            <div class="card-back">
-                                <i class="fa-brands fa-golang"></i>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </article>
-        </main>
+    <div class="confetti">
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
+        <div class="confetti__piece"></div>
     </div>
+
+    <header class="header">
+        <h1 class="header__title">Tech Flip</h1>
+    </header>
+
+    <main>
+        <section>
+
+            <article class="score">
+                <p class="score__count">Flip Count: <span id="count"></span></p>
+                <button class="score__refresh-btn">Refresh</button>
+            </article>
+
+            <article class="table">
+                <ul class="table__cards">
+                    <li class="card" data-identifier="python">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="python">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="react">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="react">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="sass">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-sass"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="sass">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-sass"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="javascript">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-square-js"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="javascript">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-square-js"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="css">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="css">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="html">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="html">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="angular">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-angular"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="angular">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-angular"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="vue">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-vuejs"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="vue">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-vuejs"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="php">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-php"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="php">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-php"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="node-js">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-node-js"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="node-js">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-node-js"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="less">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-less"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="less">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-less"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="docker">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-docker"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="docker">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-docker"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="bootstrap">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-bootstrap"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="bootstrap">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-bootstrap"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="git">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="git">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="linux">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-linux"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="linux">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-linux"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="gitlab">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-gitlab"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="gitlab">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-gitlab"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="laravel">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-laravel"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="laravel">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-laravel"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="go">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-golang"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="card" data-identifier="go">
+                        <div class="card__front">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <div class="card__back">
+                            <i class="fa-brands fa-golang"></i>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
 
     <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
 </body>
+
 </html>

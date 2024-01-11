@@ -1,16 +1,17 @@
-const refreshButton = document.querySelector('button');
-const cardsContainer = document.querySelector('ul');
-const cards = document.querySelectorAll('.card');
-const flipCount = document.getElementById('count');
-const confettiContainer = document.querySelector('.confetti');
+// Elements Refs
+const refreshButtonRef = document.querySelector('.score__refresh-btn');
+const cardsContainerRef = document.querySelector('.table__cards');
+const cardsRef = document.querySelectorAll('.card');
+const flipCountRef = document.getElementById('count');
+const confettiContainerRef = document.querySelector('.confetti');
 
 let selectedCards = [];
 let parCards = [];
 
-cards.forEach(card => {
+cardsRef.forEach(card => {
     card.addEventListener('click', () => {
-        if (selectedCards.length < 2 && !card.classList.contains('flipped') && !card.classList.contains('completed')) {
-            card.classList.add('flipped');
+        if (selectedCards.length < 2 && !card.classList.contains('card--flipped') && !card.classList.contains('completed')) {
+            card.classList.add('card--flipped');
             selectedCards.push(card);
 
             if (selectedCards.length === 2) {
@@ -22,45 +23,46 @@ cards.forEach(card => {
 
                     parCards.push(card1, card2);
                 } else {
-                    card1.classList.add('error');
-                    card2.classList.add('error');
+                    card1.classList.add('card--error');
+                    card2.classList.add('card--error');
 
                     setTimeout(() => {
-                        card1.classList.remove('error');
-                        card2.classList.remove('error');
+                        card1.classList.remove('card--error');
+                        card2.classList.remove('card--error');
 
-                        card1.classList.remove('flipped');
-                        card2.classList.remove('flipped');
+                        card1.classList.remove('card--flipped');
+                        card2.classList.remove('card--flipped');
                     }, 1000);
                 }
 
                 selectedCards = [];
             }
 
-            flipCount.innerHTML++
+            flipCountRef.innerHTML++
         }
 
+        // Handle Win Confetti
         if (parCards.length === 36) {
-            confettiContainer.style.display = 'flex';
+            confettiContainerRef.style.display = 'flex';
             setTimeout(() => {
-                confettiContainer.style.display = 'none';
+                confettiContainerRef.style.display = 'none';
             }, 3500);
         }
     });
 });
 
 const shuffleCards = () => {
-    const cardsArr = Array.from(document.querySelectorAll('.card'));
+    const cardsArr = Array.from(cardsRef);
     cardsArr.sort(() => Math.random() - 0.5);
     cardsArr.forEach(card => {
-        card.classList.remove('flipped');
+        card.classList.remove('card--flipped');
         card.classList.remove('completed');
-        cardsContainer.appendChild(card);
+        cardsContainerRef.appendChild(card);
     });
     
-    flipCount.innerHTML = 0;
+    flipCountRef.innerHTML = 0;
     parCards = [];
 }
 
 document.addEventListener('DOMContentLoaded', shuffleCards);
-refreshButton.addEventListener('click', shuffleCards);
+refreshButtonRef.addEventListener('click', shuffleCards);
