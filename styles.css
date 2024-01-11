@@ -149,19 +149,19 @@ section {
     transform: rotateY(180deg);
 }
   
-.card.card--flipped .card__front {
+.card--flipped .card__front {
     transform: rotateY(180deg);
 }
   
-.card.card--flipped .card__back {
+.card--flipped .card__back {
     transform: rotateY(0deg);
 }
   
-.card.completed {
+.card--completed {
     cursor: default;
 }
 
-.card.card--error {
+.card--error {
     animation: error-shaking 0.5s;
 }
 
@@ -195,7 +195,7 @@ section {
     z-index: 1000;
 }
 
-.confetti.active {
+.confetti--active {
     display: flex;
 }
 

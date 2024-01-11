@@ -10,42 +10,49 @@ let parCards = [];
 
 cardsRef.forEach(card => {
     card.addEventListener('click', () => {
-        if (selectedCards.length < 2 && !card.classList.contains('card--flipped') && !card.classList.contains('completed')) {
+        const cardClassCondition = !card.classList.contains('card--flipped') && !card.classList.contains('card--completed');
+        const cardLengthCondition = selectedCards.length < 2;
+
+        if (cardLengthCondition && cardClassCondition) {
             card.classList.add('card--flipped');
             selectedCards.push(card);
 
             if (selectedCards.length === 2) {
-                const [card1, card2] = selectedCards;
+                const [firstCard, secondCard] = selectedCards;
 
-                if (card1.dataset.identifier === card2.dataset.identifier) {
-                    card1.classList.add('completed');
-                    card2.classList.add('completed');
+                const firstCardTech = firstCard.dataset.identifier;
+                const secondCardTech = secondCard.dataset.identifier;
 
-                    parCards.push(card1, card2);
+                if (firstCardTech === secondCardTech) {
+                    firstCard.classList.add('card--completed');
+                    secondCard.classList.add('card--completed');
+
+                    parCards.push(firstCard, secondCard);
                 } else {
-                    card1.classList.add('card--error');
-                    card2.classList.add('card--error');
+                    firstCard.classList.add('card--error');
+                    secondCard.classList.add('card--error');
 
                     setTimeout(() => {
-                        card1.classList.remove('card--error');
-                        card2.classList.remove('card--error');
+                        firstCard.classList.remove('card--error');
+                        secondCard.classList.remove('card--error');
 
-                        card1.classList.remove('card--flipped');
-                        card2.classList.remove('card--flipped');
+                        firstCard.classList.remove('card--flipped');
+                        secondCard.classList.remove('card--flipped');
                     }, 1000);
                 }
 
                 selectedCards = [];
             }
 
+            // Handle Flip Count
             flipCountRef.innerHTML++
         }
 
         // Handle Win Confetti
         if (parCards.length === 36) {
-            confettiContainerRef.style.display = 'flex';
+            confettiContainerRef.classList.add('confetti--active');
             setTimeout(() => {
-                confettiContainerRef.style.display = 'none';
+                confettiContainerRef.classList.remove('confetti--active');
             }, 3500);
         }
     });
@@ -56,7 +63,7 @@ const shuffleCards = () => {
     cardsArr.sort(() => Math.random() - 0.5);
     cardsArr.forEach(card => {
         card.classList.remove('card--flipped');
-        card.classList.remove('completed');
+        card.classList.remove('card--completed');
         cardsContainerRef.appendChild(card);
     });
     
