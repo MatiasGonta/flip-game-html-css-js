@@ -10,6 +10,8 @@ Tech Flip is a memory card flip match game based on the programming language the
 
 ![tech-flip-screenshot](./assets/tech-flip-screenshot.png)
 
+You can <a href="https://www.youtube.com/watch?v=B-6JigCXSxI" target="_blank">**click here**</a> to see an overview of the page.
+
 ## Features
 
 - Memory card game with a programming language theme.
@@ -50,6 +52,8 @@ If you have any questions, concerns or interests, feel free to contact me.
 Tech Flip es un juego de tarjetas de memoria basado en el tema del lenguaje de programación. Proporciona una interfaz simple donde los usuarios pueden probar sus habilidades de memoria volteando cartas y emparejando pares.
 
 ![tech-flip-screenshot](./assets/tech-flip-screenshot.png)
+
+Puedes hacer <a href="https://www.youtube.com/watch?v=B-6JigCXSxI" target="_blank">**clic aquí**</a> para una visión general de la página.
 
 ## Características
 
